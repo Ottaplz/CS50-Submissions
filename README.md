@@ -1,6 +1,6 @@
 ### Collection of works 
 
-## Notable contributions
+## Summary of Contributions
 
 1. Week 1 - Basic programs to understand fundamentals
 2. Week 2 - Manipulating strings and ASCii values
