@@ -1,0 +1,128 @@
+/*
+ * background image
+ */
+@media (min-width: 1200px) {
+  .cover-bg {
+    background-image: url('assets/tnatr-sidebar.jpg'), url('assets/makise-wall.jpg');
+    background-repeat: no-repeat, no-repeat;
+    background-size: 33% 100%, 33% 100%;
+    background-position: left, right;
+    background-blend-mode: screen;
+  }
+
+  /*Hide in smaller devices */
+
+
+  /* Landscape tablets and medium desktops */
+  @media (min-width: 992px) and (max-width: 1199px) {
+
+    .bgimg {
+      background-image: none;
+    }
+
+  }
+
+  /* Portrait tablets and small desktops */
+  @media (min-width: 768px) and (max-width: 991px) {
+
+        .bgimg {
+      background-image: none;
+    }
+
+  }
+
+  /* Landscape phones and portrait tablets */
+  @media (max-width: 767px) {
+
+        .bgimg {
+      background-image: none;
+    }
+
+  }
+
+  /* Portrait phones and smaller */
+  @media (max-width: 480px) {
+
+        .bgimg {
+      background-image: none;
+    }
+  }
+}
+
+/* Main album image */
+#image-gallery {
+  width: 70%;
+  margin: 0 auto;
+}
+
+#current-image {
+  width: 100%;
+  border-width: 2px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 10px;
+}
+
+/* Thumbnails for image album */
+#image-thumbs {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.thumb {
+  aspect-ratio: 1 / 1;
+  width: 18%;
+  height: 18%;
+  object-fit: cover;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: opacity .15s;
+}
+
+.thumb:hover {
+  opacity: .7;
+}
+
+.thumb:active {
+  opacity: .3;
+  border:
+}
+
+/* video aspect sizing and border */
+#video {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  border: 4px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+
+/* regular p text rules */
+p {
+    font-family: Arial;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: 100;
+    font-size: 20px;
+}
+
+
+/* formatting */
+#title {
+    margin-bottom: 20px;
+}
+
+/* hide class */
+.hide {
+  visibility: hidden;
+}
+

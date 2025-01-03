@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+{% set tally = namespace (x = 0) %}
+    <h2>All Stocks</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Stock</th>
+                <th>Amount</th>
+                <th>Price</th>
+                <th>Total Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in range(owned_list|length) %}
+                <tr>
+                    <td>{{ owned_list[row]["name"] }}</td>
+                    <td>{{ owned_list[row]["amount"] }}</td>
+                    <td>${{ owned_list[row]["price"] }}</td>
+                    <td>${{ "%.2f"|format(owned_list[row]["price"] * owned_list[row]["amount"]) }}</td>
+                    {% set tally.x = tally.x + (owned_list[row]["price"] * owned_list[row]["amount"]) %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+<div class="section">
+
+    <h2>Total Assets</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Cash</th>
+                <th>Total Holdings</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in user_raw %}
+                <tr>
+                    <td>${{ "%.2f"|format(row["cash"]) }}</td>
+                    <td>${{ "%.2f"|format(tally.x + row["cash"]) }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

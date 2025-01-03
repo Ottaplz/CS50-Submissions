@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <h2>History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Stock</th>
+                <th>Price</th>
+                <th>Amount</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock_row in stock_row %}
+                <tr>
+                    <td>{{ stock_row.type }}</td>
+                    <td>{{ stock_row.symbol }}</td>
+                    <td>${{ stock_row.price }}</td>
+                    <td>{{ stock_row.AMOUNT }}</td>
+                    <td>{{ stock_row.date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

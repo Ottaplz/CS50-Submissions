@@ -1,0 +1,7 @@
+{
+    "gitdoc.enabled": true,
+    "workbench.colorTheme": "Visual Studio Dark",
+    "files.associations": {
+        "cmath": "c"
+    }
+}
